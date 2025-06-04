@@ -13,21 +13,21 @@ function App() {
   const defaultPosts = [
     {
       id: 1,
-      title: 'rato javascripti',
+      title: 'სლოტ1',
       content:
-        'ki',
+        'სლოტ2',
     },
     {
       id: 2,
-      title: 'gamimaqset',
+      title: 'სლოტ4',
       content:
-        'KIU NUMBER 1',
+        'გიორგი ჯომარჯიძე',
     },
     {
       id: 3,
-      title: 'gexvewebit',
+      title: 'რაღაცა',
       content:
-        'blalaslds',
+        'რაღაცა',
     },
   ];
   let [posts, setPosts] = useState(defaultPosts);
