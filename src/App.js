@@ -5,19 +5,38 @@ import PostViewPage from './pages/PostViewPage';
 import PostListPage from './pages/PostListPage';
 import PostCreatePage from './pages/PostCreatePage';
 
-
-// Components
 import NavBar from './components/NavBar';
 import './assets/css/App.css';
 
 function App() {
-  // Struct: {id: number, title: string, content: string}
-  let [posts, setPosts] = useState([]);
+  // მაგალითის პოსტების მასივი
+  const defaultPosts = [
+    {
+      id: 1,
+      title: 'rato javascripti',
+      content:
+        'ki',
+    },
+    {
+      id: 2,
+      title: 'gamimaqset',
+      content:
+        'KIU NUMBER 1',
+    },
+    {
+      id: 3,
+      title: 'gexvewebit',
+      content:
+        'blalaslds',
+    },
+  ];
+  let [posts, setPosts] = useState(defaultPosts);
+
   const navigate = useNavigate();
 
-
+  // ახალი პოსტის დამატება
   const handlePostCreate = (newPost) => {
-    // Extract highest id
+    // მაქსიმალური ID-ის გამოთვლა
     const highestId = posts.reduce((max, post) => Math.max(max, post.id), 0);
 
     console.log('Creating new post:', newPost);
@@ -31,8 +50,9 @@ function App() {
       },
     ]);
 
+    // გადამისამართება მთავარი გვერდზე პოსტის შექმნის შემდეგ
     navigate('/');
-  }
+  };
 
   return (
     <>
@@ -45,7 +65,6 @@ function App() {
         </Routes>
       </main>
     </>
-
   );
 }
 

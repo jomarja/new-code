@@ -1,22 +1,22 @@
-import React from 'react';
 
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const PostViewPage = ({ posts }) => {
   const { postId } = useParams();
   
-  // Find the post by ID
+  // პოსტის მოძებნა ID-ს მიხედვით
   const post = posts.find(p => p.id === parseInt(postId, 10));
 
-  if (!post)
+  if (!post) 
+    // თუ პოსტი ვერ მოიძებნა
     return <div>Post not found</div>;
-
 
   return (
     <div className="post-detail">
       <div className='post-header'>
         <Link to="/" className="back-link">
-        ← Back to Home
+          ← Back to Home
         </Link>
         <h1>{post.title}</h1>
       </div>
@@ -29,4 +29,5 @@ const PostViewPage = ({ posts }) => {
     </div>
   );
 }
+
 export default PostViewPage;
